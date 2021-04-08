@@ -1,6 +1,6 @@
 # Template file for 'lxd'
 pkgname=lxd
-version=3.23
+version=4.9
 revision=1
 build_style=go
 go_import_path=github.com/lxc/lxd
@@ -15,15 +15,16 @@ maintainer="Cameron Nemo <cnemo@tutanota.com>"
 license="Apache-2.0"
 homepage="https://linuxcontainers.org/lxd"
 distfiles="https://linuxcontainers.org/downloads/lxd/lxd-${version}.tar.gz"
-checksum=e4e1e878753dd30d90d222a54cb5f62bf197fb78d9e85232208cbc54cd3875fd
+checksum=445e1dfcca4cc14587e083704389fb0bc4de8189597740a35ef3b7acdf56036b
 system_groups="lxd"
 
-_libdir="/usr/lib/sqlite-replication"
-LDFLAGS="-L${XBPS_CROSS_BASE}${_libdir} -Wl,-R${_libdir}"
 # whitelist libcap LDFLAGS (see: https://github.com/lxc/lxd/issues/6727)
 export CGO_LDFLAGS_ALLOW='-Wl,-wrap,pthread_create'
 
-broken="ffs again"
+do_configure() {
+	# the LXD tarball packages up the required dependencies
+	ln -s "$wrksrc/_dist" "$GOPATH"
+}
 
 post_install() {
 	vinstall scripts/bash/lxd-client 644 /usr/share/bash-completion/completions lxd

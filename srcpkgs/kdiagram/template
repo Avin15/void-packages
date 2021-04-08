@@ -1,6 +1,6 @@
 # Template file for 'kdiagram'
 pkgname=kdiagram
-version=2.6.2
+version=2.8.0
 revision=1
 build_style=cmake
 hostmakedepends="extra-cmake-modules qt5-qmake qt5-host-tools python"
@@ -11,7 +11,7 @@ maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later"
 homepage="http://www.kde.org/"
 distfiles="${KDE_SITE}/${pkgname}/${version}/${pkgname}-${version}.tar.xz"
-checksum=0ab7d36e8c4602f46f445c615dc42c35afcc7cb7da9a0ca2cb46b16f86f56669
+checksum=579dad3bd1ea44b5a20c0f133ebf47622e38960f9c7c8b3a316be30a369f431f
 
 kdiagram-devel_package() {
 	short_desc+=" - development"
@@ -19,6 +19,7 @@ kdiagram-devel_package() {
 	pkg_install() {
 		vmove usr/include
 		vmove usr/lib/cmake
-		vmove usr/lib/*.so
+		vmove usr/lib/qt5/mkspecs
+		vmove "usr/lib/*.so"
 	}
 }

@@ -1,0 +1,22 @@
+# Template file for 'cargo-crev'
+pkgname=cargo-crev
+version=0.19.1
+revision=1
+build_style=cargo
+make_install_args="--path ./cargo-crev"
+hostmakedepends="pkg-config"
+makedepends="openssl-devel"
+short_desc="Cryptographically verifiable code review system for cargo"
+maintainer="Jan Christian Grünhage <jan.christian@gruenhage.xyz>"
+license="MPL-2.0, MIT, Apache-2.0"
+homepage="https://github.com/crev-dev/cargo-crev"
+distfiles="${homepage}/archive/v${version}.tar.gz"
+checksum=2595915cb7dfa63248c6cd86cb0648122d61ba36de8f3cec0860d692d89b3605
+
+post_install() {
+	vlicense LICENSE-APACHE
+	vlicense LICENSE-MIT
+	vlicense LICENSE-MPL2
+	vdoc README.md
+	vdoc cargo-crev/src/doc/getting_started.md
+}

@@ -1,6 +1,6 @@
 # Template file for 'surgescript'
 pkgname=surgescript
-version=0.5.4.3
+version=0.5.5
 revision=1
 build_style=cmake
 hostmakedepends="pkg-config"
@@ -9,12 +9,13 @@ maintainer="Andrew Benson <abenson+void@gmail.com>"
 license="Apache-2.0"
 homepage="https://opensurge2d.org/"
 distfiles="http://github.com/alemart/surgescript/archive/v${version}.tar.gz"
-checksum=52bb460b3a882788cc1001610d35f56a9c206b4f565db593a507f69862d6270c
+checksum=c9f59131d5cd921a11fb1335fe93bd754f4b1eefa1ed95aaa0343a28437f3f78
 
 surgescript-devel_package() {
 	short_desc+=" - development files"
 	pkg_install() {
 		vmove usr/include
 		vmove "usr/lib/*.a"
+		vmove usr/lib/pkgconfig
 	}
 }

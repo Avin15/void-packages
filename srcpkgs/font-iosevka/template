@@ -1,21 +1,19 @@
 # Template file for 'font-iosevka'
 pkgname=font-iosevka
-version=2.3.3
-revision=2
-archs=noarch
+version=5.2.1
+revision=1
 create_wrksrc=yes
-hostmakedepends="unzip"
 depends="font-util"
 short_desc="Slender monospace sans-serif and slab-serif typeface"
 maintainer="Diogo Leal <diogo@diogoleal.com>"
 license="OFL-1.1"
-homepage="https://be5invis.github.io/Iosevka/"
+homepage="https://typeof.net/Iosevka/"
 distfiles="https://raw.githubusercontent.com/be5invis/Iosevka/v${version}/LICENSE.md>LICENSE.txt
  https://github.com/be5invis/Iosevka/releases/download/v${version}/ttc-iosevka-${version}.zip
  https://github.com/be5invis/Iosevka/releases/download/v${version}/ttc-iosevka-slab-${version}.zip"
-checksum="ecfd74a1d6749bf509cee122870da0186bccfae446e3f6bc5faff253577ab000
- 619cefd74834c9277adf09b873a4fce6522d3f8e9241cfe15620c2f2662e7b4a
- 28e7560114ed4d21fef3fc32c4eed9638d2a1237ea7e529e0bccce89407c75e6"
+checksum="72c3d557ff41d871680652f56afd565ba6834c90eadc45a4ec15410dce1c0c80
+ c160178621f7c2943b3c00b2f33146e5c0b7945cecfb5008bd8f80aa5f1946bc
+ f12ad8fe3a1ccb398302456154107420b0411fc039993a5966b36dc43f361435"
 
 font_dirs="/usr/share/fonts/TTF"
 

@@ -1,6 +1,6 @@
 # Template file for 'obs'
 pkgname=obs
-version=25.0.3
+version=26.1.2
 revision=1
 archs="i686* x86_64* ppc64le*"
 wrksrc="obs-studio-${version}"
@@ -17,7 +17,9 @@ license="GPL-2.0-or-later"
 homepage="https://obsproject.com"
 changelog="https://github.com/obsproject/obs-studio/releases"
 distfiles="https://github.com/obsproject/obs-studio/archive/${version}.tar.gz"
-checksum=16b163b8e00a55fcc3836482d28dda00b8917a87c5f17318e2dc00f1ee199e61
+checksum=bc8b4c61ba4aae87b70c589a6a5b8538e4f03121b31e9b98a2071d9f6006b897
+
+CFLAGS="-fcommon"
 
 obs-devel_package() {
 	short_desc+=" - development files"
